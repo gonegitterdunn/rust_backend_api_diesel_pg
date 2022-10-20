@@ -13,3 +13,4 @@
 - Start docker
 - Run `bash scripts/init_script.sh`
 - Run `systemfd --no-pid -s http::5000 -- cargo watch -x run`
+- Run postman collection against running project!
