@@ -1,7 +1,10 @@
 use diesel::{r2d2::ConnectionManager, PgConnection};
 use diesel_migrations::embed_migrations;
 use lazy_static::lazy_static;
+use r2d2;
 use std::env;
+
+use crate::error_handler::CustomError;
 
 type Pool = r2d2::Pool<ConnectionManager<PgConnection>>;
 pub type DbConnection = r2d2::PooledConnection<ConnectionManager<PgConnection>>;
@@ -19,7 +22,7 @@ lazy_static! {
 pub fn init() {
     lazy_static::initialize(&POOL);
     let conn = connection().expect("Failed to get db connection");
-    embed_migrations::run(&conn).unwrap();
+    embedded_migrations::run(&conn).unwrap();
 }
 
 pub fn connection() -> Result<DbConnection, CustomError> {

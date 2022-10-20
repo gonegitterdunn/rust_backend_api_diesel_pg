@@ -1,4 +1,15 @@
-use actix_web::{get, HttpResponse};
+use crate::{
+    employees::{Employee, Employees},
+    error_handler::CustomError,
+};
+use actix_web::{delete, get, post, put, web, HttpResponse};
+use serde_json::json;
+
+#[post("/employees")]
+async fn create(employee: web::Json<Employee>) -> Result<HttpResponse, CustomError> {
+    let employee = Employees::create(employee.into_inner())?;
+    Ok(HttpResponse::Ok().json(employee))
+}
 
 #[get("/employees")]
 async fn find_all() -> Result<HttpResponse, CustomError> {
@@ -8,17 +19,7 @@ async fn find_all() -> Result<HttpResponse, CustomError> {
 
 #[get("/employee/{id}")]
 async fn find(id: web::Path<i32>) -> Result<HttpResponse, CustomError> {
-    let employee = web::block(|| Employees::find(id.into_inner()))
-        .await
-        .unwrap();
-    Ok(HttpResponse::Ok().json(employee))
-}
-
-#[post("/employees")]
-async fn create(employee: web::Json<Employee>) -> Result<HttpResponse, CustomError> {
-    let employee = web::block(|| Employees::create(employee.into_inner()))
-        .await
-        .unwrap();
+    let employee = Employees::find(id.into_inner())?;
     Ok(HttpResponse::Ok().json(employee))
 }
 
@@ -27,17 +28,13 @@ async fn update(
     id: web::Path<i32>,
     employee: web::Json<Employee>,
 ) -> Result<HttpResponse, CustomError> {
-    let employee = web::block(|| Employees::update(id.into_inner(), employee, into_inner()))
-        .await
-        .unwrap();
+    let employee = Employees::update(id.into_inner(), employee.into_inner())?;
     Ok(HttpResponse::Ok().json(employee))
 }
 
 #[delete("/employees/{id}")]
 async fn delete(id: web::Path<i32>) -> Result<HttpResponse, CustomError> {
-    let deleted_employee = web::block(|| Employees::delete(id.into_inner()))
-        .await
-        .unwrap();
+    let deleted_employee = Employees::delete(id.into_inner())?;
     Ok(HttpResponse::Ok().json(json!({ "deleted": deleted_employee })))
 }
 

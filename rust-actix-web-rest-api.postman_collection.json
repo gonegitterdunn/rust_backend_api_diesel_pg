@@ -1,0 +1,1044 @@
+{
+	"info": {
+		"_postman_id": "993f059a-b4fd-45d2-80fa-0023436aa8ff",
+		"name": "rust-actix-web-rest-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11586970"
+	},
+	"item": [
+		{
+			"name": "Create Employees",
+			"item": [
+				{
+					"name": "Create employee 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function() {",
+									"    pm.response.to.have.status(200);",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"department\": \"Marketing\",\n    \"salary\": 50000,\n    \"age\": 24\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create employee 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Verify id\", function() {",
+									"    pm.expect(jsonData.id).is.to.equal(2);",
+									"});",
+									"",
+									"pm.test(\"Verify first name\", function() {",
+									"    pm.expect(jsonData.first_name).is.to.equal(\"Sally\");",
+									"});",
+									"",
+									"pm.test(\"Verify last name\", function() {",
+									"    pm.expect(jsonData.last_name).is.to.equal(\"Jane\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Sally\",\n    \"last_name\": \"Jane\",\n    \"department\": \"Accounting\",\n    \"salary\": 40000,\n    \"age\": 21\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create employee 3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function() {",
+									"    pm.response.to.have.status(200);",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Lois\",\n    \"last_name\": \"Helen\",\n    \"department\": \"HR\",\n    \"salary\": 35000,\n    \"age\": 22\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create employee 4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function() {",
+									"    pm.response.to.have.status(200);",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Mark\",\n    \"last_name\": \"Redding\",\n    \"department\": \"CEO\",\n    \"salary\": 75000,\n    \"age\": 32\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create employee 5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function() {",
+									"    pm.response.to.have.status(200);",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Drake\",\n    \"last_name\": \"Masters\",\n    \"department\": \"Sales\",\n    \"salary\": 55000,\n    \"age\": 27\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Employees",
+			"item": [
+				{
+					"name": "Get employee 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Verify id\", function() {",
+									"    pm.expect(jsonData.id).is.to.equal(1);",
+									"});",
+									"",
+									"pm.test(\"Verify first name\", function() {",
+									"    pm.expect(jsonData.first_name).is.to.equal(\"John\");",
+									"});",
+									"",
+									"pm.test(\"Verify last name\", function() {",
+									"    pm.expect(jsonData.last_name).is.to.equal(\"Doe\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employee/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employee",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get employee 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Verify id\", function() {",
+									"    pm.expect(jsonData.id).is.to.equal(2);",
+									"});",
+									"",
+									"pm.test(\"Verify first name\", function() {",
+									"    pm.expect(jsonData.first_name).is.to.equal(\"Sally\");",
+									"});",
+									"",
+									"pm.test(\"Verify last name\", function() {",
+									"    pm.expect(jsonData.last_name).is.to.equal(\"Jane\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employee/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employee",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get employee 3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Verify id\", function() {",
+									"    pm.expect(jsonData.id).is.to.equal(3);",
+									"});",
+									"",
+									"pm.test(\"Verify first name\", function() {",
+									"    pm.expect(jsonData.first_name).is.to.equal(\"Lois\");",
+									"});",
+									"",
+									"pm.test(\"Verify last name\", function() {",
+									"    pm.expect(jsonData.last_name).is.to.equal(\"Helen\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employee/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employee",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get employee 4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Verify id\", function() {",
+									"    pm.expect(jsonData.id).is.to.equal(4);",
+									"});",
+									"",
+									"pm.test(\"Verify first name\", function() {",
+									"    pm.expect(jsonData.first_name).is.to.equal(\"Mark\");",
+									"});",
+									"",
+									"pm.test(\"Verify last name\", function() {",
+									"    pm.expect(jsonData.last_name).is.to.equal(\"Redding\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employee/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employee",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get employee 5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Verify id\", function() {",
+									"    pm.expect(jsonData.id).is.to.equal(5);",
+									"});",
+									"",
+									"pm.test(\"Verify first name\", function() {",
+									"    pm.expect(jsonData.first_name).is.to.equal(\"Drake\");",
+									"});",
+									"",
+									"pm.test(\"Verify last name\", function() {",
+									"    pm.expect(jsonData.last_name).is.to.equal(\"Masters\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employee/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employee",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get All Employees",
+			"item": [
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"// Employee 1",
+									"pm.test(\"Verify id - employee 1\", function() {",
+									"    pm.expect(jsonData[0].id).is.to.equal(1);",
+									"});",
+									"pm.test(\"Verify first name - employee 1\", function() {",
+									"    pm.expect(jsonData[0].first_name).is.to.equal(\"John\");",
+									"});",
+									"pm.test(\"Verify last name - employee 1\", function() {",
+									"    pm.expect(jsonData[0].last_name).is.to.equal(\"Doe\");",
+									"});",
+									"",
+									"// Employee 2",
+									"pm.test(\"Verify id - employee 2\", function() {",
+									"    pm.expect(jsonData[1].id).is.to.equal(2);",
+									"});",
+									"pm.test(\"Verify first name - employee 2\", function() {",
+									"    pm.expect(jsonData[1].first_name).is.to.equal(\"Sally\");",
+									"});",
+									"pm.test(\"Verify last name - employee 2\", function() {",
+									"    pm.expect(jsonData[1].last_name).is.to.equal(\"Jane\");",
+									"});",
+									"",
+									"// Employee 3",
+									"pm.test(\"Verify id - employee 3\", function() {",
+									"    pm.expect(jsonData[2].id).is.to.equal(3);",
+									"});",
+									"pm.test(\"Verify first name - employee 3\", function() {",
+									"    pm.expect(jsonData[2].first_name).is.to.equal(\"Lois\");",
+									"});",
+									"pm.test(\"Verify last name - employee 3\", function() {",
+									"    pm.expect(jsonData[2].last_name).is.to.equal(\"Helen\");",
+									"});",
+									"",
+									"// Employee 4",
+									"pm.test(\"Verify id - employee 4\", function() {",
+									"    pm.expect(jsonData[3].id).is.to.equal(4);",
+									"});",
+									"pm.test(\"Verify first name - employee 4\", function() {",
+									"    pm.expect(jsonData[3].first_name).is.to.equal(\"Mark\");",
+									"});",
+									"pm.test(\"Verify last name - employee 4\", function() {",
+									"    pm.expect(jsonData[3].last_name).is.to.equal(\"Redding\");",
+									"});",
+									"",
+									"// Employee 5",
+									"pm.test(\"Verify id - employee 5\", function() {",
+									"    pm.expect(jsonData[4].id).is.to.equal(5);",
+									"});",
+									"pm.test(\"Verify first name - employee 5\", function() {",
+									"    pm.expect(jsonData[4].first_name).is.to.equal(\"Drake\");",
+									"});",
+									"pm.test(\"Verify last name - employee 5\", function() {",
+									"    pm.expect(jsonData[4].last_name).is.to.equal(\"Masters\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update Employees 2 & 4",
+			"item": [
+				{
+					"name": "Get employee 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Verify id\", function() {",
+									"    pm.expect(jsonData.id).is.to.equal(2);",
+									"});",
+									"",
+									"pm.test(\"Verify last name\", function() {",
+									"    pm.expect(jsonData.last_name).is.to.equal(\"Waters\");",
+									"});",
+									"",
+									"pm.test(\"Verify salary name\", function() {",
+									"    pm.expect(jsonData.salary).is.to.equal(42000);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Sally\",\n    \"last_name\": \"Waters\",\n    \"department\": \"Accounting\",\n    \"salary\": 42000,\n    \"age\": 21\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employees/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employees",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get employee 4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Verify id\", function() {",
+									"    pm.expect(jsonData.id).is.to.equal(4);",
+									"});",
+									"",
+									"pm.test(\"Verify first name\", function() {",
+									"    pm.expect(jsonData.first_name).is.to.equal(\"Markus\");",
+									"});",
+									"",
+									"pm.test(\"Verify age\", function() {",
+									"    pm.expect(jsonData.age).is.to.equal(33);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Markus\",\n    \"last_name\": \"Redding\",\n    \"department\": \"CEO\",\n    \"salary\": 75000,\n    \"age\": 33\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employees/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employees",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get employee 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Verify id\", function() {",
+									"    pm.expect(jsonData.id).is.to.equal(2);",
+									"});",
+									"",
+									"pm.test(\"Verify last name\", function() {",
+									"    pm.expect(jsonData.last_name).is.to.equal(\"Waters\");",
+									"});",
+									"",
+									"pm.test(\"Verify salary name\", function() {",
+									"    pm.expect(jsonData.salary).is.to.equal(42000);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employee/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employee",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get employee 4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Verify id\", function() {",
+									"    pm.expect(jsonData.id).is.to.equal(4);",
+									"});",
+									"",
+									"pm.test(\"Verify first name\", function() {",
+									"    pm.expect(jsonData.first_name).is.to.equal(\"Markus\");",
+									"});",
+									"",
+									"pm.test(\"Verify age\", function() {",
+									"    pm.expect(jsonData.age).is.to.equal(33);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employee/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employee",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete All Employees",
+			"item": [
+				{
+					"name": "Delete employee 5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Verify deleted\", function() {",
+									"    pm.expect(jsonData.deleted).is.to.equal(1);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employees/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employees",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete employee 4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Verify deleted\", function() {",
+									"    pm.expect(jsonData.deleted).is.to.equal(1);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employees/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employees",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete employee 3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Verify deleted\", function() {",
+									"    pm.expect(jsonData.deleted).is.to.equal(1);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employees/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employees",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete employee 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Verify deleted\", function() {",
+									"    pm.expect(jsonData.deleted).is.to.equal(1);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employees/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employees",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete employee 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Verify deleted\", function() {",
+									"    pm.expect(jsonData.deleted).is.to.equal(1);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employees/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employees",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
